@@ -8,31 +8,31 @@
 @layer base {
   :root {
     /* Core Colors */
-    --color-background: #ffffff; /* white background */
-    --color-foreground: #0b0b12; /* dark text */
-    --color-border: #e5e7eb; /* light border */
-    --color-input: #ffffff; /* white */
+    --color-background: #0b0b12; /* deep-space-background */
+    --color-foreground: #E7EBF2; /* high-contrast-text */
+    --color-border: rgba(255, 255, 255, 0.1); /* subtle-white-10 */
+    --color-input: #0e101a; /* surface-color */
     --color-ring: #7C3AED; /* violet-primary */
     
     /* Card Colors */
-    --color-card: #f9fafb; /* light surface */
-    --color-card-foreground: #0b0b12; /* dark text */
+    --color-card: #0e101a; /* surface-color */
+    --color-card-foreground: #E7EBF2; /* high-contrast-text */
     
     /* Popover Colors */
-    --color-popover: #ffffff; /* white */
-    --color-popover-foreground: #0b0b12; /* dark text */
+    --color-popover: #0e101a; /* surface-color */
+    --color-popover-foreground: #E7EBF2; /* high-contrast-text */
     
     /* Muted Colors */
-    --color-muted: #f3f4f6; /* light gray */
-    --color-muted-foreground: #6b7280; /* gray text */
+    --color-muted: rgba(22, 24, 36, 0.6); /* glassmorphism-surface */
+    --color-muted-foreground: #9BA3AF; /* muted-text */
     
     /* Primary Colors */
-    --color-primary: #0b0b12; /* dark */
-    --color-primary-foreground: #ffffff; /* white */
+    --color-primary: #E7EBF2; /* high-contrast-text */
+    --color-primary-foreground: #0b0b12; /* deep-space-background */
     
     /* Secondary Colors */
-    --color-secondary: #f3f4f6; /* light gray */
-    --color-secondary-foreground: #0b0b12; /* dark text */
+    --color-secondary: #9BA3AF; /* muted-text */
+    --color-secondary-foreground: #E7EBF2; /* high-contrast-text */
     
     /* Accent Colors */
     --color-accent: #7C3AED; /* violet-primary */
