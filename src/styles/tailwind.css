@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --color-background: #0b0b12; /* deep-space-background */
+    --color-foreground: #E7EBF2; /* high-contrast-text */
+    --color-border: rgba(255, 255, 255, 0.1); /* subtle-white-10 */
+    --color-input: #0e101a; /* surface-color */
+    --color-ring: #7C3AED; /* violet-primary */
+    
+    /* Card Colors */
+    --color-card: #0e101a; /* surface-color */
+    --color-card-foreground: #E7EBF2; /* high-contrast-text */
+    
+    /* Popover Colors */
+    --color-popover: #0e101a; /* surface-color */
+    --color-popover-foreground: #E7EBF2; /* high-contrast-text */
+    
+    /* Muted Colors */
+    --color-muted: rgba(22, 24, 36, 0.6); /* glassmorphism-surface */
+    --color-muted-foreground: #9BA3AF; /* muted-text */
+    
+    /* Primary Colors */
+    --color-primary: #E7EBF2; /* high-contrast-text */
+    --color-primary-foreground: #0b0b12; /* deep-space-background */
+    
+    /* Secondary Colors */
+    --color-secondary: #9BA3AF; /* muted-text */
+    --color-secondary-foreground: #E7EBF2; /* high-contrast-text */
+    
+    /* Accent Colors */
+    --color-accent: #7C3AED; /* violet-primary */
+    --color-accent-foreground: #FFFFFF; /* white */
+    
+    /* Success Colors */
+    --color-success: #22c55e; /* green-500 */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    /* Warning Colors */
+    --color-warning: #f59e0b; /* amber-500 */
+    --color-warning-foreground: #FFFFFF; /* white */
+    
+    /* Error/Destructive Colors */
+    --color-error: #ef4444; /* red-500 */
+    --color-error-foreground: #FFFFFF; /* white */
+    --color-destructive: #ef4444; /* red-500 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Gradient Colors */
+    --gradient-primary: linear-gradient(135deg, #7C3AED 0%, #22D3EE 100%); /* violet-to-cyan */
+    --gradient-accent: linear-gradient(135deg, #7C3AED 0%, #22D3EE 100%); /* violet-to-cyan */
+    
+    /* Shadow Colors */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.25); /* subtle-elevation */
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.25); /* card-elevation */
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.25); /* modal-elevation */
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.25); /* floating-elevation */
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .glassmorphism {
+    @apply backdrop-blur-md bg-muted border border-border;
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .shadow-elevation-sm {
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .shadow-elevation-md {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .shadow-elevation-lg {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .shadow-elevation-xl {
+    box-shadow: var(--shadow-xl);
+  }
+  
+  .animate-shimmer {
+    @apply animate-pulse;
+  }
+  
+  .transition-smooth {
+    @apply transition-all duration-200 ease-out;
+  }
+  
+  .transition-spring {
+    transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent to-cyan-400 bg-clip-text text-transparent;
+  }
+  
+  .border-gradient {
+    border-image: var(--gradient-primary) 1;
+  }
+  
+  .hover-scale {
+    @apply hover:scale-105 transition-transform duration-120 ease-out;
+  }
+  
+  .press-scale {
+    @apply active:scale-95 transition-transform duration-120 ease-out;
+  }
+  
+  .skeleton {
+    @apply animate-pulse bg-muted rounded;
+  }
+}
